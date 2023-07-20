@@ -112,21 +112,25 @@ ul {
   .nav-items:hover{
     font-weight: bold;
   }
-  .icon-scroll {
+  .up{
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 20px;
-    border-radius: 50%;
-    background-color: rgb(94, 23, 235,0.7);
     width: 50px;
     height: 50px;
+    margin: 20px;
+    border-radius: 50%;
+    background-color: rgba(94, 23, 235, 0.7);
     display: none;
     cursor: pointer;
   }
-  .i-s{
-    transform: translate(100%, 100%);
-  }
+
+.i-s {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
   main {
     padding-top: 80px;

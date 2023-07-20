@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded",function(){
         const icon=document.getElementById("icon-scroll");
         const hero=document.getElementById("hero");
 
-        const tamanoHero=hero.getBoundingClientRect();//aqui tomo el tamano del hero en relacion a la pantalla
+        const tamanoHero=hero.getBoundingClientRect();
         if(tamanoHero.top >=0 ){
             icon.style.display = "none";
         }
