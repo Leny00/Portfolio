@@ -12,3 +12,33 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     };
 })
+
+    function ultimoscroll() {
+        localStorage.setItem('scroll', window.scrollY);
+    }
+
+    window.addEventListener('scroll',ultimoscroll);
+
+    document.addEventListener("DOMContentLoaded", function(){
+        const posicionscroll = localStorage.getItem('scroll');
+        if (posicionscroll != null) {
+            window.scrollTo(0, posicionscroll);
+        }
+    });
+
+    function loadIframe() {
+        const frameContainer = document.getElementById("iframeContainer");
+        if (frameContainer.childElementCount === 0) {
+            const frame = document.createElement("iframe");
+            frame.src = "https://koko-portfolio.netlify.app";
+            frame.classList.add("lazy-frame");
+            frameContainer.appendChild(frame);
+        }
+    }
+
+    function removeIframe() {
+        const frameContainer = document.getElementById("iframeContainer");
+        while (frameContainer.firstChild) {
+            frameContainer.removeChild(frameContainer.firstChild);
+        }
+    }

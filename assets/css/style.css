@@ -17,7 +17,6 @@ body {
     background-size: cover;
     color: #fff;
     position: relative;
-    font-display: swap;
 }
 
 body::after {
@@ -137,6 +136,7 @@ ul {
   }
   .title,.about,.projects,.contact {
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -208,6 +208,100 @@ ul {
 .title-section-pj .title-tx span:nth-child(8) {
   color: #5E17EB;
 }
+
+.card-project {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    perspective: 150rem;
+    border-radius: 10px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.card-side.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-side.back {
+    z-index: 1;
+    transform: rotateY(-180deg);
+    border: 5px solid #5E17EB;
+}
+
+.card-project:hover .card {
+    transform: rotateY(180deg);
+}
+
+.lazy-frame {
+    width: 100%;
+    height: 100%;
+}
+.card-header{
+    border-bottom: 5px solid #5E17EB;
+}
+.card-header .card-img{
+    width: 100%;
+    height: 100%;
+}
+.front{
+    border: 5px solid #5E17EB;
+    background-color: #171717;
+}
+.card-title{
+    font-family: "Spray",sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.card-description{
+    font-family: "Spray",sans-serif;
+    text-transform: uppercase;
+    font-size: 6px;
+    letter-spacing: 5px;
+    padding: 20px 20px 10px 20px  ;
+}
+.card-footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-footer-icon{
+    margin:0 20px 20px 20px;
+}
+
+
+
+
 
   #skills {
     padding: 50px;
